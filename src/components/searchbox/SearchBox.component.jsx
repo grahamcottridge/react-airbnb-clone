@@ -83,7 +83,7 @@ class SearchBox extends React.Component {
           <div className="col m12 submit-btn">
             <div className="input-field" id="submit-btn">
               <input
-                className="btn-large waves-effect waves-light red accent-2"
+                className="btn-large waves-effect waves-light red accent-2 input2"
                 type="submit"
               ></input>
             </div>

@@ -1,3 +1,11 @@
+.col .m12 {
+  padding: 0px;
+}
+
+.col .m6 {
+  padding: 0px;
+}
+
 .home-search-box.col.m4 {
   background: #ffffff !important;
   border-radius: 4px !important;
@@ -24,6 +32,7 @@
 
 .home-search-box .submit-btn {
   text-align: right;
+  box-shadow: none;
 }
 
 #submit-btn input {
@@ -36,12 +45,16 @@
 
 .search-box-form input {
   width: 100%;
-  font-size: 24px;
-  padding: 5px;
+  font-size: 16px;
+  padding: 10px;
 }
 
 .search-box-form .form-label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
+  margin-bottom: 10px;
+}
+.input2 {
+  box-shadow: none;
 }
