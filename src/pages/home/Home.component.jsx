@@ -4,11 +4,21 @@ import SearchBox from "../../components/searchbox/SearchBox.component";
 import axios from "axios";
 
 class Home extends React.Component {
-  componentDidMount() {
-    const recommendedCities = axios.get();
+  state = {
+    cities: []
+  };
+
+  async componentDidMount() {
+    const recommendedCities = await axios.get(
+      `${window.apiHost}/cities/recommended`
+    );
+    this.setState({
+      cities: recommendedCities
+    });
   }
 
   render() {
+    console.log(this.state.cities);
     return (
       <div className="container-fluid">
         <div className="row">
