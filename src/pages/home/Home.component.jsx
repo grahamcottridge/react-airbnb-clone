@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.styles.scss";
 import SearchBox from "../../components/searchbox/SearchBox.component";
+import Spinner from "../../components/spinner/Spinner.component";
 import axios from "axios";
 
 class Home extends React.Component {
@@ -18,7 +19,10 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.state.cities);
+    if (this.state.cities.length === 0) {
+      return <Spinner />;
+    }
+
     return (
       <div className="container-fluid">
         <div className="row">
