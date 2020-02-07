@@ -4,11 +4,14 @@ import "../activity/Activity.styles.scss";
 
 class Activities extends Component {
   render() {
-    return (
-      <div className="activity">
-        <h1>Activity</h1>
-      </div>
-    );
+    const activities = this.props.activities.map((activity, i) => {
+      return (
+        <div key={i} className="col s3">
+          <Activity activity={activity} key={i} />
+        </div>
+      );
+    });
+    return <div className="activity">{activities}</div>;
   }
 }
 

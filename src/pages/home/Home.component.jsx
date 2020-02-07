@@ -1,16 +1,18 @@
 import React from "react";
+import axios from "axios";
 import "./Home.styles.scss";
 import SearchBox from "../../components/searchbox/SearchBox.component";
 import Spinner from "../../components/spinner/Spinner.component";
 import Cities from "../../components/cities/Cities.component";
-import axios from "axios";
+import Activities from "../../components/activities/Activities.component";
 
 class Home extends React.Component {
   state = {
     cities: [],
     europeCities: {},
     asiaCities: {},
-    exoticCities: {}
+    exoticCities: {},
+    activities: []
   };
 
   async componentDidMount() {
@@ -39,6 +41,11 @@ class Home extends React.Component {
         exoticCities
       });
     });
+    const activitiesUrl = `${window.apiHost}/activities/today`;
+    const activities = await axios(activitiesUrl);
+    this.setState({
+      activities: activities.data
+    });
   }
 
   render() {
@@ -59,6 +66,9 @@ class Home extends React.Component {
         </div>
         <div className="container-fluid lower-fold">
           <div className="row">
+            <div className="col s12">
+              <Activities activities={this.state.activities} />
+            </div>
             <div className="col s12">
               <Cities
                 cities={this.state.cities}
