@@ -11,7 +11,7 @@ class Activity extends Component {
       image,
       rating,
       title,
-      totalRating
+      totalRatings
     } = this.props.activity;
     return (
       <div className="activity">
@@ -19,10 +19,10 @@ class Activity extends Component {
           <img src={image} />
           <div className="activity-type">{activityType}</div>
           <div className="title">{title}</div>
-          <div className="cost">From ${cost}/person</div>
+          <div className="cost">From £{cost}/person</div>
           <div className="rating">
             <i className="material-icons">star</i>
-            {rating} ({totalRating})
+            {rating} ({totalRatings})
           </div>
         </Link>
       </div>

@@ -67,7 +67,10 @@ class Home extends React.Component {
         <div className="container-fluid lower-fold">
           <div className="row">
             <div className="col s12">
-              <Activities activities={this.state.activities} />
+              <Activities
+                activities={this.state.activities}
+                header="Today in your area"
+              />
             </div>
             <div className="col s12">
               <Cities
