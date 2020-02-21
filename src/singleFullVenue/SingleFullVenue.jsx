@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./SingleFullVenue.css";
+import "./SingleFullVenue.styles.scss";
+import axios from "axios";
 
 class SingleFullVenue extends Component {
   render() {
