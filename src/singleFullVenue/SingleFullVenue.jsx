@@ -27,6 +27,7 @@ class SingleFullVenue extends Component {
             <div className="location">{sv.location}</div>
             <div className="title">{sv.title}</div>
             <div className="guests">{sv.guests}</div>
+            <div className="divider"></div>
           </div>
         </div>
       </div>
