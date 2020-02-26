@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "./SingleFullVenue.styles.scss";
 import axios from "axios";
+import Point from "./Point";
 
 class SingleFullVenue extends Component {
   state = {
-    singleVenue: {}
+    singleVenue: {},
+    points: []
   };
 
   async componentDidMount() {
@@ -12,6 +14,16 @@ class SingleFullVenue extends Component {
     const url = `${window.apiHost}/venue/${vId}`;
     const axiosResponse = await axios.get(url);
     const singleVenue = axiosResponse.data;
+
+    const pointsUrl = `${window.apiHost}/points/get`;
+    const pointsAxiosResponse = await axios.get(pointsUrl);
+
+    const points = singleVenue.points.split(",").map((point, i) => {
+      return (
+        <Point key={i} pointDesc={pointsAxiosResponse.data} point={point} />
+      );
+    });
+
     this.setState({ singleVenue });
   }
 
@@ -28,6 +40,7 @@ class SingleFullVenue extends Component {
             <div className="title">{sv.title}</div>
             <div className="guests">{sv.guests}</div>
             <div className="divider"></div>
+            {this.state.points}
           </div>
         </div>
       </div>
