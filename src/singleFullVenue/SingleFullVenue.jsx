@@ -41,6 +41,11 @@ class SingleFullVenue extends Component {
             <div className="guests">{sv.guests}</div>
             <div className="divider"></div>
             {this.state.points}
+
+            <div className="details">{sv.details}</div>
+            <div className="amenities">{sv.amenities}</div>
+
+            <div className="col s4 right-details">Right Side</div>
           </div>
         </div>
       </div>
