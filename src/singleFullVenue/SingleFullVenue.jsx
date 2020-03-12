@@ -45,7 +45,50 @@ class SingleFullVenue extends Component {
             <div className="details">{sv.details}</div>
             <div className="amenities">{sv.amenities}</div>
 
-            <div className="col s4 right-details">Right Side</div>
+            <div className="col s4 right-details">
+              <div className="price-per-day">
+                ${sv.pricePerNight} <span>per day</span>
+              </div>
+              <div className="rating">{sv.rating}</div>
+              <div className="col s6">
+                Check-In
+                <input
+                  type="date"
+                  onChange={this.changeCheckIn}
+                  value={this.state.checkIn}
+                />
+              </div>
+              <div className="col s6">
+                Check-Out
+                <input
+                  type="date"
+                  onChange={this.changeCheckOut}
+                  value={this.state.checkOut}
+                />
+              </div>
+
+              <div className="col s12">
+                <select
+                  className="browser-default"
+                  onChange={this.changeNumberOfGuests}
+                  value={this.state.numberOfGuests}
+                >
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guest</option>
+                  <option value="3">3 Guest</option>
+                  <option value="4">4 Guest</option>
+                  <option value="5">5 Guest</option>
+                  <option value="6">6 Guest</option>
+                  <option value="7">7 Guest</option>
+                  <option value="8">8 Guest</option>
+                </select>
+              </div>
+              <div className="col s12 center">
+                <button onClick={this.reserveNow} className="btn red accent-2">
+                  Reserve
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
