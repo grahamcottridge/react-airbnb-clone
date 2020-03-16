@@ -12,7 +12,7 @@ class City extends Component {
             <img src={image} />
           </div>
           <div className="city-name">{cityName}</div>
-          <div className="price">${price}/night average</div>
+          <div className="price">£price}/night average</div>
         </Link>
       </div>
     );
